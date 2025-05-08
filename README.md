@@ -2,6 +2,7 @@
 
 ```go
 $ go run main.go
+
 {"level":"info","ts":1746716227.2062423,"caller":"example-uber-zap/main.go:22","msg":"Application started"}
 {"level":"info","ts":1746716227.2062423,"caller":"example-uber-zap/main.go:29","msg":"Starting data processing"}
 {"level":"info","ts":1746716229.2075026,"caller":"example-uber-zap/main.go:31","msg":"Data processing in progress"}
@@ -10,4 +11,8 @@ $ go run main.go
 {"level":"info","ts":1746716235.2095482,"caller":"example-uber-zap/main.go:41","msg":"Closing database connections"}
 {"level":"info","ts":1746716237.2105865,"caller":"example-uber-zap/main.go:43","msg":"Resources cleaned up"}
 {"level":"info","ts":1746716239.2116847,"caller":"example-uber-zap/main.go:25","msg":"Application finished"}
+```
+
+```go
+go tool pprof heap.out
 ```
