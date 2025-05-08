@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+	"runtime/pprof"
 	"time"
 
 	"go.uber.org/zap"
@@ -18,6 +20,10 @@ func init() {
 
 func main() {
 	defer logger.Sync()
+
+	f, _ := os.Create("heap.out")
+	pprof.WriteHeapProfile(f)
+	f.Close()
 
 	logger.Info("Application started")
 	processData()
